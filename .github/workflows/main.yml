@@ -1,11 +1,11 @@
 name: GenerateProtoWorkflow
 on:
   repository_dispatch:
-    types: [GrpcProtoEvent]
+    types: [ProtoFileChanges]
 jobs:
   protoGenJobs:
     runs-on: [ubuntu-latest]
     steps:
-      - name: testListen
+      - name: ListenChanges
         run: |
-          echo ${{ github.event.client_payload.message }}.
+          echo commit message: ${{ github.event.client_payload.message }}.
