@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: testListen
         run: |
-          echo event triggered.
+          echo ${{ github.event.client_payload }}.
