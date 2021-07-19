@@ -1,0 +1,11 @@
+name: GenerateProtoWorkflow
+on:
+  repository_dispatch:
+    types: [GrpcProtoEvent]
+jobs:
+  protoGenJobs:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: testListen
+        run: |
+          echo event triggered.
