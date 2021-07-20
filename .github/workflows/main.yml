@@ -9,14 +9,14 @@ jobs:
       - name: ListenChanges
         run: |
           echo commit message: ${{ github.event.client_payload.message }}.
-      - uses: oleksiyrudenko/gha-git-credentials@v2.1
+      - uses: actions/checkout@v2
+      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
           global: true
           name: 'Tarsidi'
           email: 'tarsidi.danesh@tiket.com'
           actor: 'tarsidi-danesh'
           token: '${{ secrets.REPO_ACCESS_TOKEN }}'
-      - uses: actions/checkout@v2
       - name: Set up JDK 8
         uses: actions/setup-java@v2
         with:
