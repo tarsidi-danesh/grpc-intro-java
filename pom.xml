@@ -4,7 +4,7 @@
 
   <groupId>com.tiket.tix.sample.grpc</groupId>
   <artifactId>sample-grpc-lib</artifactId>
-  <version>1.0.0-1-SNAPSHOT</version>
+  <version>1.0.0-2-SNAPSHOT</version>
   <scm>
     <connection>scm:git:${project.scm.url}</connection>
     <developerConnection>scm:git:${project.scm.url}</developerConnection>
