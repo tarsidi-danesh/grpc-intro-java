@@ -25,5 +25,5 @@ jobs:
       - name: Build with Maven
         run: mvn --batch-mode deploy
         env:
-          GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
+          GITHUB_USERNAME: 'tarsidi-danesh'
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
