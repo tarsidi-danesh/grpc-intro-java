@@ -23,7 +23,7 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
       - name: Build with Maven
-        run: mvn --batch-mode deploy
         env:
           GITHUB_USERNAME: 'tarsidi-danesh'
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
+        run: mvn --settings settings.xml --file pom.xml deploy
