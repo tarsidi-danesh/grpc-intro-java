@@ -5,6 +5,9 @@ on:
 jobs:
   build:
     runs-on: [ubuntu-latest]
+    permissions: 
+      contents: read
+      packages: write
     steps:
       - name: Changes Log
         run: |
@@ -24,24 +27,8 @@ jobs:
           GITHUB_USERNAME: 'tarsidi-danesh'
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
         run: mvn --file pom.xml package
-  deploy:
-    runs-on: [ubuntu-latest]
-    permissions: 
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set git global config
-        run: |
-          git config --global user.name "Tarsidi"
-          git config --global user.email "tarsidi.danesh@tiket.com"
-      - name: Set up JDK 8
-        uses: actions/setup-java@v2
-        with:
-          java-version: '8'
-          distribution: 'adopt'
       - name: Deploy to Github Package Registry
         env:
           GITHUB_USERNAME: 'tarsidi-danesh'
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
-        run: mvn --settings settings.xml --file pom.xml deploy
+        run: mvn --settings settings.xml --file pom.xml clean release:clean release:prepare release:perform
