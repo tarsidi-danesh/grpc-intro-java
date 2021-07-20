@@ -14,7 +14,7 @@ jobs:
           global: true
           name: 'Tarsidi'
           email: 'tarsidi.danesh@tiket.com'
-          actor: 'tarsidi.danesh'
+          actor: 'tarsidi-danesh'
           token: '${{ secrets.REPO_ACCESS_TOKEN }}'
       - uses: actions/checkout@v2
       - name: Set up JDK 8
