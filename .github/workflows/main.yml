@@ -28,9 +28,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
         run: mvn --file pom.xml release:update-versions
       - name: Commit & Push changes
-        uses: actions-js/push@master
+        uses: EndBug/add-and-commit@v7
         with:
-          github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          author_name: Tarsidi
+          author_email: tarsidi.danesh@tiket.com
+          message: 'Update version'
+          add: 'pom.xml'
       - name: Deploy to Github Package Registry
         env:
           GITHUB_USERNAME: 'tarsidi-danesh'
