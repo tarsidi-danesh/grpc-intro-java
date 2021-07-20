@@ -31,4 +31,4 @@ jobs:
         env:
           GITHUB_USERNAME: 'tarsidi-danesh'
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
-        run: mvn --settings settings.xml --file pom.xml deploy
+        run: mvn --settings settings.xml --file pom.xml clean release:clean release:prepare release:perform
