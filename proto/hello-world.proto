@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option go_package = "github.com/tarsidi-danesh/grpc-intro-go/grpc/proto";
+
 package helloworld;
 
 // The request message containing the user's name.
