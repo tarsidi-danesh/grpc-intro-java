@@ -22,13 +22,17 @@ jobs:
         with:
           java-version: '8'
           distribution: 'adopt'
-      - name: Build with Maven
+      - name: Update version
         env:
           GITHUB_USERNAME: 'tarsidi-danesh'
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
-        run: mvn --file pom.xml package
+        run: mvn --file pom.xml release:update-versions
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
       - name: Deploy to Github Package Registry
         env:
           GITHUB_USERNAME: 'tarsidi-danesh'
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
-        run: mvn --settings settings.xml --file pom.xml clean release:clean release:prepare release:perform
+        run: mvn --settings settings.xml --file pom.xml deploy
