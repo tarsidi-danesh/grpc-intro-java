@@ -28,7 +28,7 @@ jobs:
         env:
           GITHUB_USERNAME: 'tarsidi-danesh'
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
-        run: mvn --file pom.xml release:update-versions
+        run: mvn --file pom.xml versions:set -DnewVersion=${{ github.event.client_payload.version }}
       - name: Commit & Push changes
         uses: EndBug/add-and-commit@v7
         with:
