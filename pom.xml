@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.tiket.tix.sample.grpc</groupId>
-  <artifactId>sample-grpc-lib</artifactId>
-  <version>1.0.0-2-SNAPSHOT</version>
+  <groupId>com.github.tarsidi-danesh</groupId>
+  <artifactId>grpc-intro-java</artifactId>
+  <version>v0.0.6</version>
   <scm>
     <connection>scm:git:${project.scm.url}</connection>
     <developerConnection>scm:git:${project.scm.url}</developerConnection>
