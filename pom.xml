@@ -4,7 +4,7 @@
 
   <groupId>com.github.tarsidi-danesh</groupId>
   <artifactId>grpc-intro-java</artifactId>
-  <version>0.0.4</version>
+  <version>0.0.5</version>
   <scm>
     <connection>scm:git:${project.scm.url}</connection>
     <developerConnection>scm:git:${project.scm.url}</developerConnection>
