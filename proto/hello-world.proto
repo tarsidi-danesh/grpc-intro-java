@@ -8,6 +8,7 @@ package helloworld;
 // The request message containing the user's name.
 message HelloRequest {
   string name = 1;
+  string address = 2;
 }
 
 // The response message containing the greetings
