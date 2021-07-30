@@ -19,5 +19,5 @@ message CountResponse {
 
 service Greeter {
 
-  rpc SayHello (CountRequest) returns (stream CountResponse) {}
+  rpc Count (CountRequest) returns (stream CountResponse) {}
 }
